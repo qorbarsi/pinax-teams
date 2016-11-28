@@ -7,6 +7,10 @@ from account.utils import handle_redirect_to_login
 from .conf import settings
 from .models import Team, Membership
 
+if django.VERSION >= (1, 10):
+    from django.utils.deprecation import MiddlewareMixin as BaseMiddleware
+else:
+    BaseMiddleware = object
 
 def check_team_allowed(request):
     allowed = [
@@ -21,7 +25,7 @@ def check_team_allowed(request):
     return handle_redirect_to_login(request, redirect_field_name="next")
 
 
-class TeamMiddleware(object):
+class TeamMiddleware(BaseMiddleware):
 
     def process_request(self, request):
         team_slug = request.environ.get("pinax.team")
