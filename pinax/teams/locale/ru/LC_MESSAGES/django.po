@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-28 16:23+0200\n"
+"POT-Creation-Date: 2016-11-28 17:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,6 +30,54 @@ msgstr "Pinax команды"
 #: forms.py:18 models.py:223
 msgid "Team"
 msgstr "Команда"
+
+#: forms.py:55
+msgid "Person to invite"
+msgstr "Адрес эл. почты приглашаемого"
+
+#: forms.py:56
+msgid "Role"
+msgstr "Роль"
+
+#: forms.py:84
+msgid "email address"
+msgstr "Адрес эл. почты"
+
+#: hooks.py:8
+msgid "Joined team."
+msgstr "Пользователь присоединён к команде."
+
+#: hooks.py:9
+msgid "Left team."
+msgstr "Пользователь исключен из команды."
+
+#: hooks.py:10
+msgid "Applied to join team."
+msgstr "Заявка на присоединение к команде подана."
+
+#: hooks.py:11
+msgid "Accepted application."
+msgstr "Заявка принята."
+
+#: hooks.py:12
+msgid "Rejected application."
+msgstr "Заявка отклонена."
+
+#: hooks.py:13
+msgid "Team with this name already exists"
+msgstr "Команда с таким именем уже существует"
+
+#: hooks.py:14
+msgid "You can not create a team by this name."
+msgstr "Вы не можете создать команду с таким названием."
+
+#: hooks.py:15
+msgid "User already on team."
+msgstr "Пользователь уже в команде."
+
+#: hooks.py:16
+msgid "Invite already sent."
+msgstr "Приглашение уже было выслано."
 
 #: models.py:41
 msgid "open"
