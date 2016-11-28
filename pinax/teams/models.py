@@ -75,6 +75,20 @@ class BaseTeam(models.Model):
         return self.member_access == BaseTeam.MEMBER_ACCESS_APPLICATION and state is None
 
     @property
+    def member_access_name(self):
+        for member_access in self.MEMBER_ACCESS_CHOICES:
+            if member_access[0] == self.member_access:
+                return member_access[1]
+        return None
+
+    @property
+    def manager_access_name(self):
+        for manager_access in self.MANAGER_ACCESS_CHOICES:
+            if manager_access[0] == self.manager_access:
+                return manager_access[1]
+        return None
+
+    @property
     def applicants(self):
         return self.memberships.filter(state=BaseMembership.STATE_APPLIED)
 
@@ -371,6 +385,21 @@ class Membership(BaseMembership):
         unique_together = [("team", "user", "invite")]
         verbose_name = _("Membership")
         verbose_name_plural = _("Memberships")
+
+
+    @property
+    def state_name(self):
+        for state in self.STATE_CHOICES:
+            if state[0] == self.state:
+                return state[1]
+        return None
+
+    @property
+    def role_name(self):
+        for role in self.ROLE_CHOICES:
+            if role[0] == self.role:
+                return role[1]
+        return None
 
 
 reversion.register(SimpleMembership)
