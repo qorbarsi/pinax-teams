@@ -121,7 +121,7 @@ msgstr "принято"
 
 #: models.py:258
 msgid "auto joined"
-msgstr "автоматически"
+msgstr "добавлен автоматически"
 
 #: models.py:262
 msgid "member"
@@ -137,7 +137,7 @@ msgstr "владелец"
 
 #: models.py:267
 msgid "state"
-msgstr "состояние"
+msgstr "статус участия"
 
 #: models.py:268
 msgid "role"

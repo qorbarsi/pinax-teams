@@ -52,8 +52,8 @@ class TeamForm(forms.ModelForm):
 
 class TeamInviteUserForm(forms.Form):
 
-    invitee = forms.CharField(label="Person to invite")
-    role = forms.ChoiceField(choices=Membership.ROLE_CHOICES, widget=forms.RadioSelect)
+    invitee = forms.CharField(label=_('Person to invite'))
+    role = forms.ChoiceField(label=_('Role'), choices=Membership.ROLE_CHOICES, widget=forms.RadioSelect)
 
     def clean_invitee(self):
         User = get_user_model()
@@ -81,4 +81,4 @@ class TeamInviteUserForm(forms.Form):
             "team_autocomplete_users",
             self.team.slug
         )
-        self.fields["invitee"].widget.attrs["placeholder"] = "email address"
+        self.fields["invitee"].widget.attrs["placeholder"] = _('email address')

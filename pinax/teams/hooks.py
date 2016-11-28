@@ -1,18 +1,19 @@
 from django.db.models import Q
 
 from django.core.urlresolvers import reverse
+from django.utils.translation import ugettext_lazy as _
 
 
 MESSAGE_STRINGS = {
-    "joined-team": "Joined team.",
-    "left-team": "Left team.",
-    "applied-to-join": "Applied to join team.",
-    "accepted-application": "Accepted application.",
-    "rejected-application": "Rejected application.",
-    "slug-exists": "Team with this name already exists",
-    "on-team-blacklist": "You can not create a team by this name",
-    "user-member-exists": "User already on team.",
-    "invitee-member-exists": "Invite already sent.",
+    "joined-team": _('Joined team.'),
+    "left-team": _('Left team.'),
+    "applied-to-join": _('Applied to join team.'),
+    "accepted-application": _('Accepted application.'),
+    "rejected-application": _('Rejected application.'),
+    "slug-exists": _('Team with this name already exists'),
+    "on-team-blacklist": _('You can not create a team by this name.'),
+    "user-member-exists": _('User already on team.'),
+    "invitee-member-exists": _('Invite already sent.'),
 }
 
 
