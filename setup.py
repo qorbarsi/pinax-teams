@@ -53,5 +53,10 @@ setup(
         "Programming Language :: Python :: 3.3",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
-    zip_safe=False
+    zip_safe=False,
+    package_data={
+        "pinax.teams": [
+            "locale/*/LC_MESSAGES/*",
+        ],
+    },
 )
