@@ -1,4 +1,4 @@
-import re
+import re, django
 
 from django.http import Http404
 
