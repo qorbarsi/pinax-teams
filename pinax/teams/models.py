@@ -212,7 +212,7 @@ class SimpleTeam(BaseTeam):
 @python_2_unicode_compatible
 class Team(BaseTeam):
 
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(unique=True, allow_unicode=True)
     name = models.CharField(max_length=100, verbose_name=_("name"))
     avatar = models.ImageField(upload_to=avatar_upload, blank=True, verbose_name=_("avatar"))
     description = models.TextField(blank=True, verbose_name=_("description"))
