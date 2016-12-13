@@ -239,7 +239,7 @@ class TeamInviteView(FormView):
                     "invite_form": self.get_unbound_form(),
                     "team": self.team
                 },
-                context_instance=RequestContext(self.request)
+                #context_instance=RequestContext(self.request)
             )
         }
 
@@ -263,7 +263,7 @@ class TeamInviteView(FormView):
                             "membership": membership,
                             "team": self.team
                         },
-                        context_instance=RequestContext(self.request)
+                        #context_instance=RequestContext(self.request)
                     )
                 }
             })
@@ -287,7 +287,7 @@ class TeamInviteView(FormView):
             "html": render_to_string("pinax/teams/_invite_form.html", {
                 "invite_form": form,
                 "team": self.team
-            }, context_instance=RequestContext(self.request))
+            }, #context_instance=RequestContext(self.request))
         }
         return self.render_to_response(data)
 
@@ -318,7 +318,7 @@ def team_member_resend_invite(request, pk):
                 "membership": membership,
                 "team": request.team
             },
-            context_instance=RequestContext(request)
+            #context_instance=RequestContext(request)
         )
     }
     return HttpResponse(json.dumps(data), content_type="application/json")
@@ -336,7 +336,7 @@ def team_member_promote(request, pk):
                 "membership": membership,
                 "team": request.team
             },
-            context_instance=RequestContext(request)
+            #context_instance=RequestContext(request)
         )
     }
     return HttpResponse(json.dumps(data), content_type="application/json")
@@ -354,7 +354,7 @@ def team_member_demote(request, pk):
                 "membership": membership,
                 "team": request.team
             },
-            context_instance=RequestContext(request)
+            #context_instance=RequestContext(request)
         )
     }
     return HttpResponse(json.dumps(data), content_type="application/json")
