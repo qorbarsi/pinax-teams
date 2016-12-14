@@ -144,6 +144,9 @@ class BaseTeam(models.Model):
     def is_on_team(self, user):
         return self.acceptances.filter(user=user).exists()
 
+    def is_invited(self, user):
+        return self.invitees.filter(user=user).exists()
+
     def add_member(self, user, role=None, state=None, by=None):
         # we do this, rather than put the BaseMembership constants in declaration
         # because BaseMembership is not yet defined

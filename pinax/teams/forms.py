@@ -1,6 +1,6 @@
 from django import forms
 from django.utils.translation import ugettext_lazy as _
-
+from django.core.validators import validate_email
 from django.contrib.auth import get_user_model
 
 from account.forms import SignupForm
@@ -68,10 +68,13 @@ class TeamInviteUserForm(forms.Form):
                 invitee = User.objects.get(**params)
                 if self.team.is_on_team(invitee):
                     raise forms.ValidationError(MESSAGE_STRINGS["user-member-exists"])
+                if self.team.is_invited(invitee):
+                    raise forms.ValidationError(MESSAGE_STRINGS["invitee-member-exists"])
             except User.DoesNotExist:
                 invitee = self.cleaned_data["invitee"]
                 if self.team.memberships.filter(invite__signup_code__email=invitee).exists():
                     raise forms.ValidationError(MESSAGE_STRINGS["invitee-member-exists"])
+                validate_email(invitee)
         return invitee
 
     def __init__(self, *args, **kwargs):
